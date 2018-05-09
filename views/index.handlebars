@@ -1,0 +1,26 @@
+<div id="header">
+    <h1>Burger Logger</h1>
+    <img src="assets/img/Hamburger.png" alt="burger">
+</div>
+
+<h2>Burgers not yet devoured</h2>
+
+<ul>
+    {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block devoured=false}} {{/unless}} {{/each}}
+</ul>
+
+<h2>Devoured burgers</h2>
+
+<ul>
+    {{#each burgers}} {{#if devoured}} {{> burgers/burger-block devoured=true}} {{/if}} {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="burg">Burger Name:</label>
+        <input type="text" id="burg" name="name">
+    </div>
+    <button type="submit">Add Burger</button>
+</form>
